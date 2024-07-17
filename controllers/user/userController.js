@@ -3,11 +3,7 @@ const bcrypt = require('bcrypt');
 const { google } = require('googleapis');
 const multer = require('multer')
 const { sendOtp } = require('./Otp');
-<<<<<<< HEAD
 const { log } = require('console')
-=======
-const { log, error } = require('console')
->>>>>>> 32ec62b (Initial commit)
 const { Category, User, Products, Banner } = require('../../models/DbConnection');
 
 const { OAuth2Client } = require('google-auth-library');
@@ -84,11 +80,7 @@ const googleLoginSuccess = async (req, res) => {
                 log(user)
                 req.session.userId = user[0]._id
                 req.session.Email = user[0].Email
-<<<<<<< HEAD
                 req.session.loggedIn = true
-=======
-                req.session.loggedIn = true 
->>>>>>> 32ec62b (Initial commit)
                 res.redirect("/");
             }
 
@@ -156,10 +148,6 @@ let getLogin = (req, res) => {
 };
 
 let postLogin = async (req, res) => {
-<<<<<<< HEAD
-=======
-   try { 
->>>>>>> 32ec62b (Initial commit)
     if (req.body.Email !== '' && req.body.Password !== '') {
         req.session.Email = req.body.Email
         req.session.Pass = req.body.Password
@@ -184,12 +172,6 @@ let postLogin = async (req, res) => {
     } else {
         res.status(400).json({ status: false })
     }
-<<<<<<< HEAD
-=======
-   } catch (e) {
-    error(e)
-   }
->>>>>>> 32ec62b (Initial commit)
 };
 
 

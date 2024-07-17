@@ -5,14 +5,7 @@ require('dotenv').config()
 function isValidObjectId(str) { return /^[0-9a-fA-F]{24}$/.test(str); }
 
 
-<<<<<<< HEAD
-mongoose.connect(process.env.MONGOURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-=======
 mongoose.connect(process.env.MONGOURI) 
->>>>>>> 32ec62b (Initial commit)
   .then(() => {
     console.log('Connected to MongoDB');
   })
